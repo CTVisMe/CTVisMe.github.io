@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ctvisme — Projects</title>
+<style>
+  :root {
+    --fg:        #1a1a1a;
+    --fg-muted:  #5a5a5a;
+    --bg:        #fafaf7;
+    --card-bg:   #ffffff;
+    --border:    #e6e3dc;
+    --accent:    #2f5d3a;
+    --accent-bg: #eaf2ec;
+    --accent-hover: #245030;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  /* ── Header ── */
+  header {
+    padding: 64px 24px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 10px;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  header h1 span { color: var(--accent); }
+  header p.tagline {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 18px;
+    max-width: 560px;
+  }
+  header .links {
+    margin-top: 20px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  header .links a {
+    font-size: 14px;
+    color: var(--fg-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  header .links a:hover { color: var(--accent); text-decoration: none; }
+
+  /* ── Main ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── Section heading ── */
+  h2.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--fg-muted);
+    margin: 0 0 20px;
+  }
+
+  /* ── Project cards ── */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 26px;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    border-color: #ccc9c1;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-bottom: 12px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .card p {
+    margin: 0 0 18px;
+    color: var(--fg-muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .card-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .card-links a {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .card-links a:hover { text-decoration: none; opacity: 0.8; }
+  .card-links a.secondary { color: var(--fg-muted); }
+
+  /* ── Map sub-list inside a card ── */
+  .map-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .map-list li a {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--fg);
+  }
+  .map-list li a:hover { color: var(--accent); text-decoration: none; }
+  .map-list li a::before { content: "↗"; font-size: 12px; color: var(--accent); }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--fg-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ctvisme <span>/</span> projects</h1>
+  <p class="tagline">Open-data explorations — maps, analysis, and civic data for the Morristown, NJ area.</p>
+  <div class="links">
+    <a href="https://github.com/ctvisme" target="_blank">
+      <!-- GitHub icon -->
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.021C22 6.484 17.522 2 12 2z"/></svg>
+      github.com/ctvisme
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <h2 class="section-label">Projects</h2>
+
+  <div class="project-grid">
+
+    <!-- MorristownData -->
+    <div class="card">
+      <span class="card-tag">Maps · R · GIS</span>
+      <h3>Morristown Data Maps</h3>
+      <p>Interactive maps built from open NJ government data — construction permits, parcel ownership, race/ethnicity, and ancestry — covering Morristown Town, Morris Twp, and Morris Plains Boro.</p>
+      <ul class="map-list">
+        <li><a href="https://ctvisme.github.io/MorristownData/maps/morristown_construction_permits.html">Construction Permits Map</a></li>
+        <li><a href="https://ctvisme.github.io/MorristownData/maps/morristown_race_ethnicity.html">Race &amp; Ethnicity Map</a></li>
+        <li><a href="https://ctvisme.github.io/MorristownData/maps/morristown_dominant_ancestry.html">Dominant Ancestry Map</a></li>
+      </ul>
+      <div class="card-links">
+        <a href="https://ctvisme.github.io/MorristownData/">View all maps →</a>
+        <a href="https://github.com/ctvisme/MorristownData" class="secondary">GitHub repo</a>
+      </div>
+    </div>
+
+    <!-- Placeholder for future projects -->
+    <div class="card" style="border-style:dashed; background: transparent;">
+      <span class="card-tag" style="background:transparent; border: 1px solid var(--border); color: var(--fg-muted);">Coming soon</span>
+      <h3 style="color: var(--fg-muted);">More projects</h3>
+      <p>Future explorations — Morristown PD traffic stops, permit choropleth views, year-over-year analysis, and more.</p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Built with R · Leaflet · open NJ data &nbsp;·&nbsp; <a href="https://github.com/ctvisme">github.com/ctvisme</a>
+</footer>
+
+</body>
+</html>
